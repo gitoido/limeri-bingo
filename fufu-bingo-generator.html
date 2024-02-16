@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fufu Bingo</title>
+  </head>
+  <body style="width: fit-content; text-align: center; padding: 2rem; margin: 0; font-family: cursive">
+    <div
+      id="bingoDiv"
+      style="
+        width: fit-content;
+        text-align: center;
+        padding: 2rem;
+        margin: 0;
+        background: linear-gradient(to bottom, black, #4d4d4d);
+        border-radius: 4px;
+      "
+    >
+      <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
+
+      <table class="grid">
+        <tbody>
+          <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+          </tr>
+          <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+          </tr>
+          <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell cell-free"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+          </tr>
+          <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+          </tr>
+          <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 2rem">
+      <a
+        style="border: 1px solid black; padding: 24px; border-radius: 4px; font-size: 24px; cursor: pointer"
+        onclick="saveDivAsImage()"
+        >Save as Image</a
+      >
+    </div>
+
+    <style>
+      .cell {
+        border: 1px solid white;
+        width: 150px;
+        height: 150px;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        position: relative;
+      }
+      .circle {
+        width: 130px;
+        height: 130px;
+        border: 12px solid yellow;
+        border-radius: 50%;
+        z-index: 999;
+        position: absolute;
+        top: 0;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+    </style>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+      function saveDivAsImage() {
+        const div = document.querySelector("#bingoDiv");
+        html2canvas(div).then(function (canvas) {
+          const link = document.createElement("a");
+          link.href = canvas.toDataURL();
+          link.download = "bingo.png";
+          link.click();
+        });
+      }
+
+      // Add code to fill table cells with random JSON collection values
+      const collection = [
+        "It's not a Garyathon",
+        "Fufu licks the screen",
+        "Butter knife",
+        "MYAA",
+        "Fufu brings out her tail",
+        "Fufu explains something for eternity",
+        "Fufu cries",
+        "Laser pointer",
+        "Fufu hisses",
+        "Fufu says something sus",
+        "I'm not a masochist",
+        "Boing sound effect",
+        "HAAAAA!?",
+        "I am not a clown",
+        "Fufu reads out a chat copypasta",
+        "Heart eyes",
+        "Fufu presses the wrong button/toggle",
+        "YIPPEE",
+        "Stop shaking the cokey",
+        "You are not called Gary",
+        "Fufu pouts",
+        "I'm not lewd, I'm daring",
+        "Fine kok",
+        "Fufu mispronounces a word",
+        "PSPSPSPS",
+        "Fufu gets sidetracked for 5 min on a single video",
+        "Fufu says it's a warm up game for the 3rd time",
+        "Fufu thirsts on a game/anime/virtual character",
+        "Fufu complains we ruin raiders arrival",
+        "Fufu calls for help to mods (and it doesn't work)",
+        "Fufu says 'I have lots of bitches'",
+        "Fufu says 'I'm not a furry'",
+        "Laser pointer and butter knife combo",
+        "Meme sub gift",
+        "First time chatter makes Fufu mad (FirstTimeChadder)",
+        "Fufu tries to ban the bingo",
+        "Mrs Bach walks over keyboard/control panel",
+        "Fufu gets rickrolled",
+        "Fufu gets clipped out of context",
+        "Chat shakes the cokey (> or = 10 different chatters)",
+        "Fufu denies flashbang/being pale",
+        "Fufu gets called homeless",
+        "Fufu says 'lies and slander'",
+        "Mods side with chat",
+        "Yandere face",
+        "Fufu does the 'sombramain'",
+        "Denial is not my catchphrase",
+        "I hate it here",
+      ];
+
+      const cells = document.querySelectorAll(".cell");
+      const randomValues = getRandomValues(collection, 25);
+      cells.forEach((cell, index) => {
+        const div = document.createElement("div"); // Create a new div element
+        div.classList.add("wrapper"); // Add the class "wrapper" to the div
+        const paragraph = document.createElement("p"); // Create a new paragraph element
+        if (cell.classList.contains("cell-free")) {
+          paragraph.textContent = "FREE GARY SPACE";
+        } else {
+          paragraph.textContent = randomValues[index];
+        }
+        div.appendChild(paragraph); // Append the paragraph to the div
+        cell.appendChild(div); // Append the div to the cell
+      });
+
+      function getRandomValues(array, count) {
+        const shuffled = array.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+      }
+      function toggleLineThrough() {
+        if (this.querySelector(".circle")) {
+          this.querySelector(".wrapper").removeChild(this.querySelector(".circle"));
+        } else {
+          const circle = document.createElement("div");
+          circle.classList.add("circle");
+          this.querySelector(".wrapper").appendChild(circle);
+        }
+      }
+      cells.forEach((cell) => {
+        cell.addEventListener("click", toggleLineThrough);
+      });
+    </script>
+  </body>
+</html>
