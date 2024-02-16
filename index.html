@@ -3,73 +3,83 @@
   <head>
     <title>Fufu Bingo</title>
   </head>
-  <body style="    width: 100%;
-  text-align: center;
-  padding: 2rem;
-  margin: 0;
-  font-family: cursive;
-  display: flex;
-  flex-direction: column;
-  align-items: center;">
-    <div
-      id="bingoDiv"
-      style="
-        width: fit-content;
-        text-align: center;
-        padding: 2rem;
-        margin: 0;
-        background: linear-gradient(to bottom, black, #4d4d4d);
-        border-radius: 4px;
-      "
-    >
-      <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
+  <body style="width: fit-content; text-align: center; padding: 2rem; margin: 0; font-family: cursive">
+    <div style="display: flex">
+      <div>
+        <div
+          id="bingoDiv"
+          style="
+            width: fit-content;
+            text-align: center;
+            padding: 2rem;
+            margin: 0;
+            background: linear-gradient(to bottom, black, #4d4d4d);
+            border-radius: 4px;
+          "
+        >
+          <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
 
-      <table class="grid">
-        <tbody>
-          <tr>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-          </tr>
-          <tr>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-          </tr>
-          <tr>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell cell-free"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-          </tr>
-          <tr>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-          </tr>
-          <tr>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-            <td class="cell"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div style="margin-top: 2rem">
-      <a
-        style="border: 1px solid black; padding: 24px; border-radius: 4px; font-size: 24px; cursor: pointer"
-        onclick="saveDivAsImage()"
-        >Save as Image</a
-      >
+          <table class="grid">
+            <tbody>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell cell-free"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top: 2rem">
+          <a
+            style="border: 1px solid black; padding: 24px; border-radius: 4px; font-size: 24px; cursor: pointer"
+            onclick="saveDivAsImage()"
+            >Save as Image</a
+          >
+        </div>
+      </div>
+      <div style="margin-left: 5rem; padding-top: 4rem; font-size: 24px">
+        <ul style="list-style: none; padding: 0px">
+          <li>WATCH FUFU LIVE ON <a href="https://www.twitch.tv/fufu" target="_blank">TWITCH</a></li>
+          <li style="margin-top: 2rem">
+            SUGGEST NEW PROMTS
+            <a
+              href="https://docs.google.com/spreadsheets/d/16097iUdG0rW028w2dxASdTqvFvuQSR_VzWCoMLD3xyM/edit?usp=sharing"
+              target="_blank"
+              >HERE</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
 
     <style>
@@ -82,6 +92,7 @@
         font-size: 20px;
         cursor: pointer;
         position: relative;
+        min-width: 150px;
       }
       .circle {
         width: 130px;
