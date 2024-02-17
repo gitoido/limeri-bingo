@@ -251,6 +251,15 @@
         listItem.appendChild(link);
         listElement.appendChild(listItem);
       }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        logStringInConsole(
+          "Hi! Here's your clue: There's a certain code you can input on this page. The code was popular among NES Contra gamers and went by the name 'Contra Code' or '30 Lives Code'. Now it is known by a different name. Good luck!"
+        );
+      });
+      function logStringInConsole(string) {
+        console.log(string);
+      }
     </script>
   </body>
 </html>
