@@ -241,8 +241,13 @@
       });
       function activateCheats() {
         const listElement = document.querySelector(".list");
+        const existingSecretItem = document.querySelector(".secret");
+        if (existingSecretItem) {
+          return; // Do nothing if a list item with class name "secret" already exists
+        }
         const listItem = document.createElement("li");
         const link = document.createElement("a");
+        listItem.className = "secret";
         listItem.textContent = "CONGRATS YOU HAVE FOUND A SECRET ";
         link.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         link.textContent = "GARY";
