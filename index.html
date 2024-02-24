@@ -24,6 +24,7 @@
           "
         >
           <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
+          <h1 style="color: white; letter-spacing: 20px; font-size: 60px">(24h stream edition)</h1>
 
           <table class="grid">
             <tbody>
@@ -33,6 +34,17 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
               </tr>
               <tr>
                 <td class="cell"></td>
@@ -40,13 +52,26 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
               </tr>
               <tr>
+                <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell cell-free"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
+                <td class="cell"></td>
+              </tr>
+              <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
               </tr>
               <tr>
                 <td class="cell"></td>
@@ -54,8 +79,12 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
               </tr>
               <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
@@ -65,12 +94,10 @@
             </tbody>
           </table>
         </div>
-        <div style="margin-top: 2rem">
-          <a
-            style="border: 1px solid black; padding: 24px; border-radius: 4px; font-size: 24px; cursor: pointer"
-            onclick="saveDivAsImage()"
-            >Save as Image</a
-          >
+        <div style="margin-top: 2rem; display: flex; justify-content: center">
+          <div class="btn" onclick="saveDivAsImage()">
+            <a>Save as Image</a>
+          </div>
         </div>
       </div>
       <div style="margin-left: 5rem; padding-top: 4rem; font-size: 24px">
@@ -84,6 +111,11 @@
               >HERE</a
             >
           </li>
+          <div style="margin-top: 10rem; display: flex; justify-content: center">
+            <div class="btn" onclick="toggleDarkMode()">
+              <a>Toggle Dark Mode</a>
+            </div>
+          </div>
         </ul>
       </div>
     </div>
@@ -117,6 +149,42 @@
         align-items: center;
         position: relative;
       }
+      .btn {
+        border: 1px solid black;
+        padding: 24px;
+        border-radius: 4px;
+        font-size: 24px;
+        cursor: pointer;
+        width: fit-content;
+      }
+      .dark-mode {
+        background: linear-gradient(to bottom, #4d4d4d, black);
+        .btn {
+          color: white;
+          border: 1px solid white;
+        }
+        li,
+        a {
+          color: white;
+        }
+      }
+      @media (max-width: 768px) {
+        .cell {
+          width: 100px;
+          height: 100px;
+          font-size: 16px;
+          padding: 8px;
+        }
+        .circle {
+          width: 90px;
+          height: 90px;
+          border-width: 8px;
+        }
+        .btn {
+          padding: 16px;
+          font-size: 20px;
+        }
+      }
     </style>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script>
@@ -133,7 +201,7 @@
       // Add code to fill table cells with random JSON collection values
       const collection = [
         "It's not a Garyathon",
-        "Fufu licks the screen",
+        "Fufu licks the screen/does the 'blep'",
         "Butter knife",
         "MYAA",
         "Fufu brings out her tail",
@@ -177,7 +245,7 @@
         "Fufu says 'lies and slander'",
         "Mods side with chat",
         "Yandere face",
-        "Fufu does the 'sombramain'",
+        "Fufu does the 'sombramain' (disappears)",
         "Denial is not my catchphrase",
         "I hate it here",
         "18% assertive",
@@ -185,10 +253,12 @@
         "Intense moment in any game, Fufu goes: 'O loot!'",
         "WHOOOSE D*CK !?",
         "Fufu fails at math",
+        "Fufu meows out of panic",
+        "Fufu chokes/panic in-game during intense moment",
       ];
 
       const cells = document.querySelectorAll(".cell");
-      const randomValues = getRandomValues(collection, 25);
+      const randomValues = getRandomValues(collection, 49);
       cells.forEach((cell, index) => {
         const div = document.createElement("div"); // Create a new div element
         div.classList.add("wrapper"); // Add the class "wrapper" to the div
@@ -230,13 +300,13 @@
       // the 'official' Konami Code sequence
       const konamiCode = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a"];
       // a variable to remember the 'position' the user has reached so far.
-      var konamiCodePosition = 0;
+      let konamiCodePosition = 0;
       // add keydown event listener
       document.addEventListener("keydown", function (e) {
         // get the value of the key code from the key map
-        var key = allowedKeys[e.keyCode];
+        let key = allowedKeys[e.keyCode];
         // get the value of the required key from the konami code
-        var requiredKey = konamiCode[konamiCodePosition];
+        let requiredKey = konamiCode[konamiCodePosition];
         // compare the key with the required key
         if (key == requiredKey) {
           // move to the next key in the konami code sequence
@@ -275,6 +345,9 @@
       });
       function logStringInConsole(string) {
         console.log(string);
+      }
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
       }
     </script>
   </body>
