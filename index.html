@@ -24,18 +24,27 @@
           "
         >
           <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
-          <h1 style="color: white; letter-spacing: 20px; font-size: 60px">(24h stream edition)</h1>
+          <!-- <h1 style="color: white; letter-spacing: 20px; font-size: 60px">(24h stream edition)</h1> -->
 
           <table class="grid">
             <tbody>
+              <!-- <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr> -->
               <tr>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
+                <!-- <td class="cell"></td> -->
               </tr>
               <tr>
                 <td class="cell"></td>
@@ -43,26 +52,17 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
+                <!-- <td class="cell"></td> -->
               </tr>
               <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-              </tr>
-              <tr>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell cell-free"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
               </tr>
               <tr>
                 <td class="cell"></td>
@@ -70,8 +70,8 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
+                <!-- <td class="cell"></td> -->
               </tr>
               <tr>
                 <td class="cell"></td>
@@ -79,10 +79,10 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
+                <!-- <td class="cell"></td> -->
               </tr>
-              <tr>
+              <!-- <tr>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
@@ -90,7 +90,7 @@
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -223,9 +223,9 @@
         "Fufu pouts",
         "I'm not lewd, I'm daring",
         "Fine kok",
-        "Fufu mispronounces a word",
+        "Fufu mispronounces a word/chatter name",
         "PSPSPSPS",
-        "Fufu gets sidetracked for 5 min on a single video",
+        "Fufu gets sidetracked for 5 min on any topic",
         "Fufu says it's a warm up game for the 3rd time",
         "Fufu thirsts on a game/anime/virtual character",
         "Fufu complains we ruin raiders arrival",
@@ -238,17 +238,17 @@
         "Fufu tries to ban the bingo",
         "Mrs Bach walks over keyboard/control panel",
         "Fufu gets rickrolled",
-        "Fufu gets clipped out of context",
+        "Fufu gets clipped out of context (clip must be posted in chat)",
         "Chat shakes the cokey (> or = 10 different chatters)",
         "Fufu denies flashbang/being pale",
-        "Fufu gets called homeless",
+        "Fufu explains why she is not homeless after being called such",
         "Fufu says 'lies and slander'",
         "Mods side with chat",
         "Yandere face",
         "Fufu does the 'sombramain' (disappears)",
         "Denial is not my catchphrase",
         "I hate it here",
-        "18% assertive",
+        "Fufu says she's 18% assertive",
         "Fufu clicks on a link in chat and it's a Fufu meme",
         "Intense moment in any game, Fufu goes: 'O loot!'",
         "WHOOOSE D*CK !?",
@@ -258,7 +258,7 @@
       ];
 
       const cells = document.querySelectorAll(".cell");
-      const randomValues = getRandomValues(collection, 49);
+      const randomValues = getRandomValues(collection, 25);
       cells.forEach((cell, index) => {
         const div = document.createElement("div"); // Create a new div element
         div.classList.add("wrapper"); // Add the class "wrapper" to the div
