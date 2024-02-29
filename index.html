@@ -339,6 +339,10 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+        const darkMode = localStorage.getItem("dark-mode");
+        if (darkMode === "true") {
+          toggleDarkMode();
+        }
         logStringInConsole(
           "Hi! Here's your clue: There's a certain code you can input on this page. The code was popular among NES Contra gamers and went by the name 'Contra Code' or '30 Lives Code'. Now it is known by a different name. Good luck!"
         );
@@ -348,6 +352,11 @@
       }
       function toggleDarkMode() {
         document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("dark-mode", "true");
+        } else {
+          localStorage.setItem("dark-mode", "false");
+        }
       }
     </script>
   </body>
