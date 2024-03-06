@@ -9,7 +9,16 @@
       rel="stylesheet"
     />
   </head>
-  <body style="width: fit-content; text-align: center; padding: 2rem; margin: 0; font-family: 'Shantell Sans', cursive">
+  <body
+    style="
+      width: fit-content;
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+      font-family: 'Shantell Sans', cursive;
+      background: #d5d5d5;
+    "
+  >
     <div style="display: flex">
       <div>
         <div
@@ -19,11 +28,11 @@
             text-align: center;
             padding: 2rem;
             margin: 0;
-            background: linear-gradient(to bottom, black, #4d4d4d);
+            background: linear-gradient(to bottom, black, #232323);
             border-radius: 4px;
           "
         >
-          <h1 style="color: white; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
+          <h1 style="color: #d5d5d5; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
           <!-- <h1 style="color: white; letter-spacing: 20px; font-size: 60px">(24h stream edition)</h1> -->
 
           <table class="grid">
@@ -125,10 +134,10 @@
     </div>
     <style>
       .cell {
-        border: 1px solid white;
+        border: 1px solid #d5d5d5;
         width: 150px;
         height: 150px;
-        color: white;
+        color: #d5d5d5;
         padding: 10px;
         font-size: 20px;
         cursor: pointer;
@@ -161,14 +170,14 @@
         width: fit-content;
       }
       .dark-mode {
-        background: linear-gradient(to bottom, #4d4d4d, black);
+        background: linear-gradient(to bottom, #232323, black) !important;
         .btn {
-          color: white;
-          border: 1px solid white;
+          color: #d5d5d5;
+          border: 1px solid #d5d5d5;
         }
         li,
         a {
-          color: white;
+          color: #d5d5d5;
         }
       }
       @media (max-width: 768px) {
@@ -266,6 +275,8 @@
         "Water ASMR",
         "Fufu blows the party tooter",
         "Fufu shittalks her chat to raiders",
+        "I'm not gonna make it easy for you (Fufu about bingo)",
+        "Fufu says this is outrageous",
       ];
 
       const cells = document.querySelectorAll(".cell");
