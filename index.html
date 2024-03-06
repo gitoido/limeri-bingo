@@ -134,7 +134,7 @@
     </div>
     <style>
       .cell {
-        border: 1px solid #d5d5d5;
+        border: 2px solid #d5d5d5;
         width: 150px;
         height: 150px;
         color: #d5d5d5;
@@ -179,6 +179,10 @@
         a {
           color: #d5d5d5;
         }
+      }
+      .highlight {
+        border-width: 2px;
+        border-color: red;
       }
       @media (max-width: 768px) {
         .cell {
@@ -307,9 +311,6 @@
           this.querySelector(".wrapper").appendChild(circle);
         }
       }
-      cells.forEach((cell) => {
-        cell.addEventListener("click", toggleLineThrough);
-      });
 
       const allowedKeys = {
         37: "left",
@@ -380,6 +381,74 @@
           localStorage.setItem("dark-mode", "false");
         }
       }
+      function checkForWinningCondition() {
+        const rows = 5; // assuming 5x5 grid
+        const cols = 5;
+        let cellsArray = Array.from(cells);
+
+        // Check rows and columns
+        for (let i = 0; i < rows; i++) {
+          let row = cellsArray.slice(i * rows, i * rows + rows);
+          let col = cellsArray.filter((_, j) => j % cols === i);
+          checkSequence(row);
+          checkSequence(col);
+        }
+
+        // Check diagonals
+        let diag1 = cellsArray.filter((_, i) => i % (rows + 1) === 0);
+        let diag2 = cellsArray.filter((_, i) => i % (rows - 1) === 0 && i !== 0 && i !== cellsArray.length - 1);
+        checkSequence(diag1);
+        checkSequence(diag2);
+      }
+
+      function checkSequence(sequence) {
+        let count = 0;
+        let winningCells = [];
+        for (let cell of sequence) {
+          if (cell.querySelector(".circle")) {
+            count++;
+            winningCells.push(cell);
+          } else {
+            count = 0;
+            winningCells = [];
+          }
+          if (count === 5) {
+            winningCells.forEach((cell) => cell.classList.add("highlight"));
+            break;
+          }
+        }
+      }
+
+      function removeHighlight(cell) {
+        const rows = 5; // assuming 5x5 grid
+        const cols = 5;
+        let cellsArray = Array.from(cells);
+        let index = cellsArray.indexOf(cell);
+
+        // Find the row, column, and diagonals that the cell belongs to
+        let row = cellsArray.slice(Math.floor(index / rows) * rows, Math.floor(index / rows) * rows + rows);
+        let col = cellsArray.filter((_, j) => j % cols === index % cols);
+        let diag1 = cellsArray.filter((_, i) => i % (rows + 1) === index % (rows + 1));
+        let diag2 = cellsArray.filter(
+          (_, i) => i % (rows - 1) === index % (rows - 1) && i !== 0 && i !== cellsArray.length - 1
+        );
+
+        // Remove the "highlight" class from all cells in these groups
+        [...row, ...col, ...diag1, ...diag2].forEach((cell) => cell.classList.remove("highlight"));
+      }
+
+      // Add this function call in the click event listener
+      cells.forEach((cell) => {
+        cell.addEventListener("click", function () {
+          if (this.querySelector(".circle")) {
+            removeHighlight(this);
+          } else {
+            checkForWinningCondition();
+          }
+          toggleLineThrough.call(this);
+          checkForWinningCondition();
+        });
+      });
     </script>
   </body>
 </html>
