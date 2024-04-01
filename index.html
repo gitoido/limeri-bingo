@@ -416,12 +416,10 @@
         }
         let index = 0;
         setInterval(() => {
-          while (index < 100) {
-            const imageContainer = createImageContainer(index);
-            const container = document.getElementById("bingo-wrapper");
-            container.appendChild(imageContainer);
-            index++;
-          }
+          const imageContainer = createImageContainer(index);
+          const container = document.getElementById("bingo-wrapper");
+          container.appendChild(imageContainer);
+          index++;
         }, Math.floor(Math.random() * 6000) + 5000);
       });
       function logStringInConsole(string) {
