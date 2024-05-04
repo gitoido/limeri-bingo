@@ -138,6 +138,9 @@
             <div class="btn" style="margin-top: 1.5rem" onclick="saveDivAsImage()">
               <a>Save board as Image</a>
             </div>
+            <div class="btn" style="margin-top: 10rem" onclick="resetCounter()">
+              <a>Reset counter</a>
+            </div>
             <div class="btn" style="margin-top: 1.5rem" onclick="toggleDarkMode()">
               <a>Toggle Dark Mode</a>
             </div>
@@ -345,6 +348,12 @@
         div.appendChild(paragraph); // Append the paragraph to the div
         cell.appendChild(div); // Append the div to the cell
       });
+
+      function resetCounter() {
+        localStorage.setItem("counter", "0");
+        localStorage.setItem("isUpdated", "false");
+        document.getElementById("bingoCounter").textContent = localStorage.getItem("counter");
+      }
 
       function getRandomValues(array, count) {
         const shuffled = array.sort(() => 0.5 - Math.random());
