@@ -33,6 +33,10 @@
           "
         >
           <h1 style="color: #d5d5d5; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
+          <h2 style="margin-top: 2rem; color: #d5d5d5; letter-spacing: 20px; font-size: 30px">
+            BINGO BOARDS COMPLETED: <span id="bingoCounter"></span>
+          </h2>
+
           <!-- <h1 style="color: white; letter-spacing: 20px; font-size: 60px">(24h stream edition)</h1> -->
 
           <table class="grid">
@@ -355,6 +359,13 @@
         if (darkMode === "true") {
           toggleDarkMode();
         }
+        const counter = localStorage.getItem("counter");
+        if (!counter) {
+          localStorage.setItem("counter", "0");
+        }
+        const isUpdated = localStorage.getItem("isUpdated");
+        localStorage.setItem("isUpdated", "false");
+        document.getElementById("bingoCounter").textContent = localStorage.getItem("counter");
       });
       function logStringInConsole(string) {
         console.log(string);
@@ -368,8 +379,8 @@
         }
       }
       function checkForWinningCondition() {
-        const rows = 5; // assuming 5x5 grid
-        const cols = 5;
+        const rows = 7; // assuming 5x5 grid
+        const cols = 7;
         let cellsArray = Array.from(cells);
 
         // Check rows and columns
@@ -398,16 +409,24 @@
             count = 0;
             winningCells = [];
           }
-          if (count === 5) {
+          if (count === 7) {
             winningCells.forEach((cell) => cell.classList.add("highlight"));
+            const counter = localStorage.getItem("counter");
+            const isUpdated = localStorage.getItem("isUpdated");
+            if (isUpdated === "false") {
+              localStorage.setItem("counter", parseInt(counter) + 1);
+              document.getElementById("bingoCounter").textContent = localStorage.getItem("counter");
+            }
+            localStorage.setItem("isUpdated", "true");
+
             break;
           }
         }
       }
 
       function removeHighlight(cell) {
-        const rows = 5; // assuming 5x5 grid
-        const cols = 5;
+        const rows = 7; // assuming 5x5 grid
+        const cols = 7;
         let cellsArray = Array.from(cells);
         let index = cellsArray.indexOf(cell);
 
