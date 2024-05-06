@@ -41,9 +41,18 @@
 
           <table class="grid">
             <tbody>
+              <!-- <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr> -->
               <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td>
+                <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
@@ -51,17 +60,8 @@
                 <td class="cell"></td>
               </tr>
               <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-              </tr>
-              <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td>
+                <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
@@ -69,26 +69,17 @@
                 <td class="cell"></td>
               </tr>
               <tr>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell cell-free"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td> -->
               </tr>
               <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-                <td class="cell"></td>
-              </tr>
-              <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td>
+                <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
@@ -96,14 +87,23 @@
                 <td class="cell"></td>
               </tr>
               <tr>
-                <td class="cell"></td>
-                <td class="cell"></td>
+                <!-- <td class="cell"></td>
+                <td class="cell"></td> -->
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
                 <td class="cell"></td>
               </tr>
+              <!-- <tr>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+                <td class="cell"></td>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -335,7 +335,7 @@
       ];
 
       const cells = document.querySelectorAll(".cell");
-      const randomValues = getRandomValues(collection, 49);
+      const randomValues = getRandomValues(collection, 25);
       cells.forEach((cell, index) => {
         const div = document.createElement("div"); // Create a new div element
         div.classList.add("wrapper"); // Add the class "wrapper" to the div
@@ -400,8 +400,8 @@
         }
       }
       function checkForWinningCondition() {
-        const rows = 7; // assuming 5x5 grid
-        const cols = 7;
+        const rows = 5; // assuming 5x5 grid
+        const cols = 5;
         let cellsArray = Array.from(cells);
 
         // Check rows and columns
@@ -430,7 +430,7 @@
             count = 0;
             winningCells = [];
           }
-          if (count === 7) {
+          if (count === 5) {
             winningCells.forEach((cell) => cell.classList.add("highlight"));
             const counter = localStorage.getItem("counter");
             const isUpdated = localStorage.getItem("isUpdated");
@@ -446,8 +446,8 @@
       }
 
       function removeHighlight(cell) {
-        const rows = 7; // assuming 5x5 grid
-        const cols = 7;
+        const rows = 5; // assuming 5x5 grid
+        const cols = 5;
         let cellsArray = Array.from(cells);
         let index = cellsArray.indexOf(cell);
 
