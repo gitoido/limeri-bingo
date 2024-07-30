@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fufu Bingo</title>
+    <title>Limeri Bingo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,7 @@
       padding: 2rem;
       margin: 0;
       font-family: 'Shantell Sans', cursive;
-      background: #d5d5d5;
+      background: #d9fc7d;
     "
   >
     <div style="display: flex" id="bingo-wrapper">
@@ -28,15 +28,15 @@
             text-align: center;
             padding: 2rem;
             margin: 0;
-            background: linear-gradient(to bottom, black, #232323);
+            background: #fff;
             border-radius: 4px;
             display: flex;
             flex-direction: column;
             justify-content: center;
           "
         >
-          <h1 style="color: #d5d5d5; letter-spacing: 20px; font-size: 60px">Fufu Bingo</h1>
-          <h2 style="margin-top: 2rem; color: #d5d5d5; letter-spacing: 20px; font-size: 30px">
+          <h1 style="color: #222; letter-spacing: 20px; font-size: 60px">Limeri Bingo</h1>
+          <h2 style="margin-top: 2rem; color: #222; letter-spacing: 20px; font-size: 30px">
             BINGO BOARDS COMPLETED: <span id="bingoCounter"></span>
           </h2>
 
@@ -113,51 +113,36 @@
       </div>
       <div style="margin-left: 5rem; padding-top: 4rem; font-size: 24px">
         <ul style="list-style: none; padding: 0px" class="list">
-          <li>WATCH FUFU LIVE ON <a href="https://www.twitch.tv/fufu" target="_blank">TWITCH</a></li>
-          <li style="margin-top: 2rem">
-            CHECK OUT FUFU MERCH
-            <a href="https://uwumarket.us/collections/fufu" target="_blank">HERE</a>
-          </li>
-          <li style="margin-top: 2rem">
-            CHECK ALL AVAILABLE PROMPTS OR SUGGEST NEW ONES
-            <a
-              href="https://docs.google.com/spreadsheets/d/16097iUdG0rW028w2dxASdTqvFvuQSR_VzWCoMLD3xyM/edit?usp=sharing"
-              target="_blank"
-              >HERE</a
-            >
-          </li>
-          <div
-            style="
+          <li>WATCH LIME LIVE ON <a href="https://www.twitch.tv/limerien" target="_blank">TWITCH</a></li>
+        </ul>
+        <div
+                style="
               margin-top: 10rem;
               display: flex;
               justify-content: center;
               flex-direction: column;
               align-items: center;
             "
-          >
-            <div class="btn" onclick="generateNewBoard()">
-              <a>Generate new board</a>
-            </div>
-            <div class="btn" style="margin-top: 1.5rem" onclick="saveDivAsImage()">
-              <a>Save board as Image</a>
-            </div>
-            <div class="btn" style="margin-top: 10rem" onclick="resetCounter()">
-              <a>Reset counter</a>
-            </div>
-            <div class="btn" style="margin-top: 1.5rem" onclick="toggleDarkMode()">
-              <a>Toggle Dark Mode</a>
-            </div>
+        >
+          <div class="btn" onclick="generateNewBoard()">
+            <a>Generate new board</a>
           </div>
-        </ul>
+          <div class="btn" style="margin-top: 1.5rem" onclick="saveDivAsImage()">
+            <a>Save board as Image</a>
+          </div>
+          <div class="btn" style="margin-top: 10rem" onclick="resetCounter()">
+            <a>Reset counter</a>
+          </div>
+        </div>
       </div>
     </div>
     <style></style>
     <style>
       .cell {
-        border: 2px solid #d5d5d5;
+        border: 2px solid #d7f20b;
         width: 150px;
         height: 150px;
-        color: #d5d5d5;
+        color: #000;
         padding: 10px;
         font-size: 20px;
         cursor: pointer;
@@ -190,14 +175,14 @@
         width: fit-content;
       }
       .dark-mode {
-        background: linear-gradient(to bottom, #232323, black) !important;
+        background: #c2f921 !important;
         .btn {
-          color: #d5d5d5;
-          border: 1px solid #d5d5d5;
+          color: #222;
+          border: 1px solid #222;
         }
         li,
         a {
-          color: #d5d5d5;
+          color: #222;
         }
       }
       .highlight {
@@ -264,76 +249,31 @@
 
       // ADD YOU COLLECTION OF PROMPTS HERE
       const collection = [
-        "Fufu licks the screen/does the 'blep'",
-        "Butter knife",
-        "MYAA",
-        "Fufu brings out her tail",
-        "Fufu explains something for eternity",
-        "Fufu cries",
-        "Laser pointer",
-        "Fufu hisses",
-        "Fufu says something sus",
-        "I'm not a masochist",
-        "Boing sound effect",
-        "HAAAAA!?",
-        "I am not a clown",
-        "Fufu reads out a chat copypasta",
-        "Heart eyes",
-        "Fufu presses the wrong button/toggle",
-        "YIPPEE",
-        "Stop shaking the cokey",
-        "Fufu pouts",
-        "I'm not lewd, I'm daring",
-        "Fine kok",
-        "Fufu mispronounces a word/chatter name",
-        "PSPSPSPS",
-        "Fufu gets sidetracked for 5 min on any topic",
-        "Fufu says it's a warm up game",
-        "Fufu thirsts on a game/anime/virtual character",
-        "Fufu complains we ruin raiders arrival",
-        "Fufu calls for help to mods (and it doesn't work)",
-        "Fufu says 'I have lots of bitches/I am not maidenless'",
-        "Fufu says 'I'm not a furry'",
-        "Laser pointer and butter knife combo",
-        "Meme sub gift",
-        "First time chatter makes Fufu mad (FirstTimeChadder)",
-        "Fufu tries to ban the bingo",
-        "Mrs Bach walks over keyboard/control panel",
-        "Fufu gets rickrolled",
-        "Fufu gets clipped out of context (clip must be posted in chat)",
-        "Chat shakes the cokey (>= 10 different chatters)",
-        "Fufu denies flashbang/being pale",
-        "Fufu explains why she is not homeless after being called such",
-        "Fufu says 'lies and slander'",
-        "Mods side with chat",
-        "Yandere face",
-        "Fufu does the 'sombramain' (disappears)",
-        "Denial is not my catchphrase",
-        "I hate it here",
-        "Fufu says she's 18% assertive",
-        "Fufu clicks on a link in chat and it's a Fufu meme",
-        "Intense moment in any game, Fufu goes: 'O loot!'",
-        "WHOOOSE D*CK !?",
-        "Fufu fails at math",
-        "Fufu meows out of panic",
-        "Fufu chokes/panic in-game during intense moment",
-        "Fufu tries to defend her cooking - catfood liking",
-        "Fufu at least 3 minutes late to stream after timer hits 0 Latege",
-        "Bathroom break",
-        "Fufu tells someone 'Ok you're so done'",
-        "Oh you son of a mother, you probably also have a father",
-        "Water ASMR",
-        "Fufu blows the party tooter",
-        "Fufu shittalks her chat to raiders",
-        "I'm not gonna make it easy for you (Fufu about bingo)",
-        "Fufu says 'this is outrageous/unacceptable'",
-        "Desk loses 10 HP (Fufu slaps the desk)",
-        "Fufu says 'you are a menace/scandalous'",
-        "Fufu says she's evil (LOL)",
-        "Chat starts clown hype  train",
-        "Fufu says 'There's no Fufu tax'",
-        "Fufu mentioning she won Ebiko's rizz contest",
-        "Fufu laughs at her own 'blep'",
+              "Lime says that she is a clown",
+              "Lime denies lewd stuff",
+              "Lime says \"FUCK\" 15 minutes of starting stream",
+              "Stream dies (notLikeThis)",
+              "Lime says MOMMY\\WIFE",
+              "Someone in chat posts the \"P\" clip",
+              "Limeri gets bullied by chat",
+              "Lime will lie to herself and say she got bitches",
+              "Sub goal reached",
+              "Munch ASMR when she starts stream",
+              "Lime fails to read",
+              "Lime starts to crying",
+              "Chat gaslighting Lime",
+              "Strimmer is Latege",
+              "Lime admits she is cute",
+              "Lime shaking off emotes",
+              "Desk took damage",
+              "MAYHEM (Lime kills everything she sees)",
+              "Lime brain fart, zones out on random stuff",
+              "\"Gramri\" word mentioned by streamer",
+              "Good girl denial",
+              "Daddy hurricane knocks at the door",
+              "ANNOYED AS FUCK",
+              "Thirst upon anime character",
+              "Stream got scuffed at beginning",
       ];
 
       const cells = document.querySelectorAll(".cell");
@@ -343,7 +283,7 @@
         div.classList.add("wrapper"); // Add the class "wrapper" to the div
         const paragraph = document.createElement("p"); // Create a new paragraph element
         if (cell.classList.contains("cell-free")) {
-          div.innerHTML = "FREE GARY SPACE";
+          div.innerHTML = "FREE SPACE";
         } else {
           paragraph.textContent = randomValues[index];
         }
@@ -367,7 +307,7 @@
         } else {
           const circle = document.createElement("img");
           circle.classList.add("circle");
-          circle.src = "https://i.imgur.com/Eiffb3B.png";
+          circle.src = "/lime.png";
           circle.style.width = "100px";
           circle.style.height = "100px";
           // circle.innerHTML =
